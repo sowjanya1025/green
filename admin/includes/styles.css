@@ -1,0 +1,234 @@
+/* CSS Document */
+body{
+	background:url(../images/bg.gif);
+	background-repeat:repeat;
+	margin:0px;
+	padding:0px;
+	font-family:Tahoma;
+	font-size:11px;
+	color:#6c6c6c;
+	}
+img{
+	border:0px;
+	}
+	
+.inputone{
+	border:2px solid #f1eeee; 
+	background:url(../images/bg-input.gif); 
+	height:20px; 
+	background-repeat:repeat-x; 
+	width:100px;
+	font-family:Tahoma;
+	font-size:11px;
+	color:#6c6c6c;
+	}
+.inputtwo{
+	border:2px solid #f1eeee; 
+	background-color:#ffffde;
+	height:20px; 
+	background-repeat:repeat-x; 
+	width:140px;
+	font-family:Tahoma;
+	font-size:11px;
+	color:#6c6c6c;
+	}
+	.inputthree{
+	border:2px solid #f1eeee; 
+	background-color:#ffffde;
+	height:20px; 
+	background-repeat:repeat-x; 
+	width:190px;
+	font-family:Tahoma;
+	font-size:11px;
+	color:#6c6c6c;
+	}
+	.inputfour{
+	border:2px solid #f1eeee; 
+	background-color:#ffffde;
+	background-repeat:repeat-x; 
+	font-family:Tahoma;
+	font-size:11px;
+	color:#6c6c6c;
+	}
+	
+#leftbar 
+	{
+	font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:left;
+	}
+#leftbar ul
+	{
+	margin:0px;
+	padding:0px;
+	padding-left:15px;
+	}
+#leftbar ul li
+	{
+	list-style:none;
+	height:18px;
+	width:140px;
+	background:url(../images/arrow.gif);
+	background-repeat:no-repeat;
+	line-height:18px;
+	padding-left:17px;
+	background-position:left center;
+	}
+#leftbar ul li a
+	{
+	text-decoration:none;
+	display:block;
+	color:#6c6c6c;
+	height:18px;
+	line-height:18px;
+	}
+#leftbar ul li a:hover
+	{
+	color:#cc2700;
+	display:block;
+	}
+.subtext1{
+	font-family:Tahoma;
+	font-size:11px;
+	color:#6c6c6c;
+	}
+.subheadingone{
+	font-family:Tahoma;
+	font-size:11px;
+	font-weight:bold;
+	text-align:center;
+	color:#fff;
+	background:url(../images/bg-subhead.gif);
+	height:22px;
+	line-height:22px;
+	}
+.subheadingtwo{
+	font-family:Tahoma;
+	font-size:17px;
+	text-align:left;
+	color:#ee8701;
+	height:30px;
+	line-height:30px;
+	}
+.tableborder{
+	border:1px solid #e5e5e7; 
+	border-collapse:collapse;
+	}
+.subtext2{
+	font-family:Tahoma;
+	font-size:11px;
+	color:#646363;
+	}
+.welcometextone{font-family:Tahoma;
+	font-size:22px;
+	color:#6c6c6c;
+	text-align:center;
+	}
+.welcometexttwo{font-family:Tahoma;
+	font-size:22px;
+	color:#f68c02;
+	text-align:center;
+	}
+.commonbut{
+	font-family:Tahoma;
+	font-size:11px;
+	color:#fff;
+	font-weight:bold;
+	border:1px solid #dc6b00;
+	background:url(../images/bg-but.gif);
+	height:18px;
+	}
+	
+.subheadingthree{
+	font-family:Tahoma;
+	font-size:17px;
+	color:#FF9900;
+	height:30px;
+	line-height:30px;
+	}
+select{
+	border:2px solid #f1eeee; 
+	background:url(../images/bg-input.gif); 
+	background-repeat:repeat-x; 
+	width:150px;
+	font-family:Tahoma;
+	background-color:#ffffde;
+	font-size:11px;
+	color:#6c6c6c;
+	}
+.linkstyle
+{
+text-decoration:none;
+font-family:Tahoma;
+	font-size:11px;
+	color:#646363;
+
+}
+.err
+{
+font-family:Tahoma;
+	font-size:13px;
+	text-align:center;
+	color:#FF7C00;
+	height:30px;
+	line-height:30px;
+	font-weight:700;
+}
+.green {
+	color: #99CC00;
+	font: bold 12px Arial, Helvetica, sans-serif;
+	border-bottom: 1px dashed #E6E8ED;
+}
+.innorwrap{
+	width:197px;
+	border-left:1px solid #afafaf;
+	border-right:1px solid #afafaf;
+	}
+#leftpannel{
+	float:left;
+	width:199px;
+	background:url(../images/left-right-block-bottom.gif);
+	background-position:bottom left;
+	background-repeat:no-repeat;
+	}
+#leftnav {
+	font-family:Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:left;
+	}
+	
+	#leftnav ul{margin:0px;
+	padding:0px;
+	list-style:none;
+	}
+	
+	#leftnav li{
+	border-bottom:0px dotted #000;
+	background-repeat:no-repeat;
+	}
+	
+	#leftnav a{
+	color:#757575;
+	background:url(../images/arrow.gif);
+	background-position:left;
+	background-repeat:no-repeat;
+	height:19px;
+	line-height:19px;
+	padding-left:16px;
+	display:block;
+	text-decoration:none;
+	text-align:left;}
+	
+	#leftnav a:hover {
+	color:#cc2700;
+	background:url(../images/arrow1.gif);
+	background-repeat:no-repeat;
+	background-position:center left;
+	display:block;
+	text-decoration:none;
+	}
+	.errorinfo{
+	color:#FF0000;
+	display:inline-block
+}
+	
