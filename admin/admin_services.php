@@ -13,9 +13,9 @@ if(isset($_GET['act']))
 if(isset($act) && $act=='del')
 {
 	$aid = $_GET['aid'];
-	$sqldeladminqry = "delete from admin_users where id = $aid";
+	$sqldeladminqry = "delete from admin_services where services_id = $aid";
 	$resut = $db->getSqlQuery($sqldeladminqry);
-	header("Location:admin_members.php");
+	header("Location:admin_services.php");
 }
 /// For pagination
 $q_limit = 10;
@@ -25,14 +25,14 @@ if( isset($_GET['start']) ){
 }else{
 	$start = 0;
 }
-$filePath = "admin_members.php";
+$filePath = "admin_services.php";
 ?>
 <script language="javascript">
 function del_admin(adminid,start)
 {
-	if(confirm('Are you sure want to delete the user?'))
+	if(confirm('Are you sure want to delete this Service?'))
 	{
-		document.location.href='admin_members.php?act=del&aid='+adminid+'&start='+start;
+		document.location.href='admin_services.php?act=del&aid='+adminid+'&start='+start;
 	}
 }
 </script>
@@ -41,7 +41,7 @@ function del_admin(adminid,start)
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title><?php echo WEBSITE_NAME?> :: Admin - Members</title>
+<title><?php echo WEBSITE_NAME?> :: Admin - services</title>
 <link href="includes/styles.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -87,20 +87,20 @@ function del_admin(adminid,start)
                             <td width="746px" align="center" valign="top">
 	<table width="95%"  border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
-        <td class="subheadingtwo"><div align="left">Admin Members</div></td>
+        <td class="subheadingtwo"><div align="left">Services</div></td>
       </tr>
       <tr>
         <td height="176" valign="top">
 		<table width="100%"  border="0" cellspacing="2" class="tableborder">
 			<tr class="subheadingone">
-              <td width="196" align="left" style="padding-left:10px">Name</td>
-              <td width="216" align="left" >Email</td>
+              <td width="196" align="left" style="padding-left:10px">Title</td>
+              <td width="216" align="left" >Description</td>
               <td width="77" align="left">Status</td>
               <td width="100" align="left">Action</td>
             </tr>
 			
 			<?php
-				$query = "select * from admin_users ";
+				$query = "select * from admin_services ";
 				$resut = $db->getSqlQuery($query);
 				$adminrows = $db->getSqlNumber();
 				//echo $adminrows;
@@ -120,10 +120,10 @@ function del_admin(adminid,start)
 			 ?>
             <tr bgcolor="<?=$bgcolor?>"  class="subtext2">
               <td height="20" align="left" style="padding-left:10px">
-			  <?=ucfirst($adminsdata['name']);?></td>
-              <td><?=$adminsdata['email'];?></td>
-              <td align="left"><?php if($adminsdata['status'] ==1){ echo "Active";}else{ echo "InActive";}?></td>
-              <td align="left"><a href="add_edit_members.php?act=edit&aid=<?=$adminsdata['id']?>&<?php if(isset($start)){ echo "start=".$start;}?>" ><img src="images/but-edit.gif" title="edit"/></a>&nbsp;&nbsp;<a href="javascript:del_admin(<?=$adminsdata['id']?>,<?=$start?>)" ><img src="images/but-delete.gif" title="delete"/></a> </td>
+			  <?=ucfirst($adminsdata['services_title']);?></td>
+              <td><?=$adminsdata['services_description'];?></td>
+              <td align="left"><?php if($adminsdata['services_status'] ==1){ echo "Active";}else{ echo "InActive";}?></td>
+              <td align="left"><a href="add_edit_services.php?act=edit&aid=<?=$adminsdata['services_id']?>&<?php if(isset($start)){ echo "start=".$start;}?>" ><img src="images/but-edit.gif" title="edit"/></a>&nbsp;&nbsp;<a href="javascript:del_admin(<?=$adminsdata['services_id']?>,<?=$start?>)" ><img src="images/but-delete.gif" title="delete"/></a> </td>
             </tr>
 			<?php  } ?>
   		  <tr class="subtext2">
@@ -132,11 +132,12 @@ function del_admin(adminid,start)
 		  </tr>
 			<?php } else{?>
             <tr align="center" bgcolor="#EBEBEB">
-              <td height="8" colspan="5"><font color="#FF0000">No Administrators Here.</font></td>
+              <td height="8" colspan="5"><font color="#FF0000">No Services Here.</font></td>
               </tr>
 			<?php  }?>
             <tr>
-              <td colspan="5" align="right" style="padding:10px;"><input type="button" name="New Member" value="Add Member" onClick="javascript:document.location.href='add_edit_members.php?act=new'" class="commonbut">
+              <td colspan="5" align="right" style="padding:10px;">
+			  <input type="button" name="New Member" value="Add Service" onClick="javascript:document.location.href='add_edit_services.php?act=new'" class="commonbut">
 			  </td>
             </tr>
         </table>

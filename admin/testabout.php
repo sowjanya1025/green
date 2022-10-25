@@ -12,5 +12,10 @@
 </head>
     <textarea name="myeditor" id="myeditor">Welcome to the Mitrajit's Tech Blog</textarea>
 <body>
+    <?php
+    $hashedPassword =  password_hash("admin", PASSWORD_DEFAULT);
+    echo $hashedPassword ;
+    //$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+     ?>
 </body>
 </html>

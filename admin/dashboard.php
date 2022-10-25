@@ -4,6 +4,8 @@ if(!isset($_SESSION['adminId']))
 {
 	header("Location:index.php");
 }
+//echo $_SESSION['adminId'];
+//exit;
 require_once('database.php');
 
 ?>

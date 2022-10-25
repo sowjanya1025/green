@@ -39,14 +39,55 @@ if(isset($_POST))
 			echo "<script>alert('data inserted')</script>";
 			header("Location:admin_about.php");
 			exit;
-
 		}
-		
-		
-	}
-	
-	
+  }
 }
+$query = "select * from admin_aboutus ";
+$resut = $db->getSqlQuery($query);
+$adminrows = $db->getSqlNumber();
+if($adminrows > 0)
+{ 
+  while($adminsdata = $db->getSqlFetchdata())
+  {
+    $aboutusdata = $adminsdata['aboutus_description'];
+  }
+}
+
+if(isset($_POST))
+{
+  
+	extract($_POST);
+	if(isset($_POST['action']) && $_POST['action'] == 'edit' )
+	{
+		//echo "heree";
+		//exit;
+		if(empty($_POST['myeditor']))
+		{
+			$errdata=1;
+			$texterr = "please give some information";
+		}
+		if($errdata == 0)
+		{
+			
+			$descr = $_POST['myeditor']; 
+			//echo $descr;
+			//exit;
+			//$sani = new sanitizeforminputs("$descr");
+			
+			//echo $sani->data;
+			//var_dump($sani);
+			//exit;
+			//$sqlquery = "INSERT INTO `admin_aboutus`( 	aboutus_title ,`aboutus_description`) VALUES ('Aboutus', '$sani->data')";
+			
+      $sqlquery = "UPDATE admin_aboutus set `aboutus_description` = '$descr'";
+			$resut = $db->getSqlQuery($sqlquery);
+			header("Location:admin_about.php");
+			exit;
+		}
+  }
+
+}
+
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -125,10 +166,12 @@ if(isset($_POST))
 		  <tr>
 			<td>
 			<form name="adminaboutus" action="<?php htmlspecialchars($_SERVER['PHP_SELF'])?>" method="post">
-			<input type="hidden" name="action" value="aboutus" />
+			<!-- <input type="hidden" name="action" value="aboutus" /> -->
+      <input type="hidden" name="action" value="edit" />
 			<table width="100%"  border="0" cellspacing="0" cellpadding="4" >
             <tr align="center">
-              <td colspan="5" align="center" valign="middle"><span style="color:#FF0000"><?php if($texterr!='') { echo $texterr; }  ?></span></td>
+              <td colspan="5" align="center" valign="middle">
+                <span style="color:#FF0000"><?php if($texterr!='') { echo $texterr; }  ?></span></td>
             </tr>
             <tr align="center">
               <td>&nbsp;</td>
@@ -141,7 +184,9 @@ if(isset($_POST))
               <td>&nbsp;</td>
               <td align="left" valign="top">Description</td>
               <td valign="top"><strong>:</strong></td>
-              <td align="left"><textarea name="myeditor" id="myeditor" cols="100" rows="10"></textarea>
+              <td align="left">
+                <textarea name="myeditor" id="myeditor" cols="100" rows="10">
+                  <?php echo $aboutusdata ?></textarea>
 				</td>
               <td>&nbsp;</td>
             </tr>
@@ -165,7 +210,7 @@ if(isset($_POST))
             </tr>
             <tr>
               <td height="20" colspan="4" align="right">
-			  <input name="Submit" type="submit" class="commonbut" id="Submit" value="Add" />
+			  <input name="Submit" type="submit" class="commonbut" id="Submit" value="Edit" />
               <input name="Button" type="button" class="commonbut" id="Submit" value="Cancel" onClick="history.back();" />                </td>
               <td height="20" align="right">&nbsp;</td>
             </tr>
@@ -174,7 +219,6 @@ if(isset($_POST))
 			</td>
 		  </tr>
 	</table>
-							
 							</td>
                           </tr>
                         </table></td>

@@ -10,12 +10,12 @@
 												<li><a href="dashboard.php">Dashboard</a></li>
 												<li><a href="admin_members.php">Administrator</a></li>
 												<li><a href="admin_about.php">About</a></li>
-												<li><a href="admin_members.php">Services</a></li>
-												<li><a href="admin_members.php">Clients</a></li>
+												<li><a href="admin_services.php">Services</a></li>
+<!--												<li><a href="admin_members.php">Clients</a></li>
 												<li><a href="admin_members.php">Clients Testimmonials</a></li>
-												<li><a href="admin_members.php">Contact</a></li>
-												<li><a href="admin_members.php">Inquiry</a></li>
-											</ul>
+-->												<li><a href="admin_members.php">Contact Messages</a></li>
+<!--												<li><a href="admin_members.php">Inquiry</a></li>
+-->											</ul>
 									</div>
 									</div>
 								</td>
